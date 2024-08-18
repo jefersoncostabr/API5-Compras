@@ -1,0 +1,79 @@
+está no app
+
+app.get("/mensagens", cors(corsOptions), (req, res) => {
+	// res.status(200).json("Mensagem:"+mensagens[1].mensagem);
+	res.status(200).json(mensagens);
+});
+
+
+
+MDN
+    https://developer.mozilla.org/pt-BR/docs/Web/HTTP/CORS
+
+NPM
+    https://www.npmjs.com/package/cors
+
+The default configuration is the equivalent of:
+{
+  "origin": "*",
+  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+  "preflightContinue": false,
+  "optionsSuccessStatus": 204
+}
+
+**********
+// import cors from 'cors'
+
+// const corsOptions = {
+//     origin: ['http://localhost:5500', 'http://127.0.0.1:5500'],
+//     optionsSuccessStatus: 200
+// };
+////colocar depois de app ser carregado
+//app.use(cors(corsOptions))
+
+// export const corsOptions = 
+//     {
+//         "origin": "*",
+//         "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+//         "preflightContinue": false,
+//         "optionsSuccessStatus": 204
+//     }
+
+// app.use(cors(corsOptions));
+
+// app.use(cors({
+//         origin: ['http://localhost:5500', 'http://127.0.0.1:5500'],
+//         method: ["Get, PUT, POST, DELETE"],
+//         header: ["Content-Type"],
+//         optionsSuccessStatus: 200
+//     }));
+
+
+**********
+
+//     Erro cors
+//import cors from "cors"
+
+// app.use((req, res, next) =>{
+//     res.header("Access-Control-Allow-Origin", "*")
+//     res.header("Access-Control-Allow-Methods", "Get, PUT, POST, DELETE" )
+//     res.header("Access-Control-Allow-Headers", "Content-Type")
+//     app.use(cors())
+//     next()
+// })
+
+
+
+********
+
+//import cors from "cors"
+
+const server = express()
+
+// server.use((req, res, next) =>{
+//     res.header("Access-Control-Allow-Origin", "*")
+//     res.header("Access-Control-Allow-Methods", "Get, PUT, POST, DELETE" )
+//     res.header("Access-Control-Allow-Headers", "Content-Type")
+//     app.use(cors())
+//     next()
+// })

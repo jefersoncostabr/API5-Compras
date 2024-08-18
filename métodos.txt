@@ -1,0 +1,26 @@
+    static async listarLivroPorId(req, res) {
+        try {
+            const id = req.params.id
+            const livroEncontrado = await livro.findById(id)
+            res.status(200).json(livroEncontrado)
+
+        } catch (erro) {
+            res.status(500).json({ message: `${erro.message} - falha na requisição do livro`})
+        }
+    }
+
+   
+
+
+
+    static async buscarPorTitulo(req, res) {
+        //req.query é com "?"
+        //varios parametros separados por "&"
+        const tituloBuscado = req.query.titulo
+        try {
+            const livroEncontrado = await livro.find({ titulo: tituloBuscado })
+            res.status(200).json(livroEncontrado)
+        } catch (error) {
+            res.status(500).json({ message: `${error.message} - falha na busca`})
+        }
+    }
